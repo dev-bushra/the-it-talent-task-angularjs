@@ -1,0 +1,17 @@
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.flow-visualizer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

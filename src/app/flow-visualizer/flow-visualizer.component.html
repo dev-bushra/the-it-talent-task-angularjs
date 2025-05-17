@@ -1,0 +1,31 @@
+<div class="flow-visualizer-container">
+  <label>
+    Select System:
+    <select [(ngModel)]="selectedSystemId" (change)="selectedDBId = null">
+      <option *ngFor="let sys of data.systems" [value]="sys.id">{{ sys.id }}</option>
+    </select>
+  </label>
+
+  <label>
+    Select Database:
+    <select [(ngModel)]="selectedDBId" [disabled]="!selectedSystemId">
+      <option *ngFor="let db of getDatabasesForSelectedSystem()" [value]="db.id">{{ db.id }}</option>
+    </select>
+  </label>
+
+  <label>
+    New Field Name:
+    <input type="text" [(ngModel)]="newFieldId" placeholder="Enter field name" />
+  </label>
+
+  <button (click)="addField()">Add Field</button>
+</div>
+
+<hr />
+
+<highcharts-chart
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  style="width: 100%; height: 400px; display: block;"
+>
+</highcharts-chart>
